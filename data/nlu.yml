@@ -1,0 +1,46 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - 안녕하세요
+    - 반갑습니다
+    - 하이
+    - 방가방가
+    - 안녕
+
+- intent: goodbye
+  examples: |
+    - 다음에 봐
+    - 다음에
+    - 끝내줘
+    - 끝
+
+- intent: affirm
+  examples: |
+    - 알았어
+    - 오케이
+    - yes
+    - 응
+
+- intent: deny
+  examples: |
+    - 아니
+    - 틀렸어
+    - 끝내줘
+    - 그만
+    - 아니야
+    - 그만
+
+- intent: sales
+  examples: |
+    - [2012년](year) 매출이 얼마야?
+    - [2018년](year) [3월](month) 매출 알려줘
+    - [12일](day) 판매금액 알려줘
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
