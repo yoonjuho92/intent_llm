@@ -1,3 +1,6 @@
-streamlit>=1.18.0,<2.0.0
-setuptools>=65.5.0,<66.0.0
-rasa
+streamlit==1.22.0
+rasa==3.5.3
+asyncio==3.4.3
+numpy==1.23.5
+scikit-learn==1.2.2
+tensorflow==2.12.0
