@@ -1,6 +1,6 @@
-streamlit==1.22.0
-rasa==1.10.12
-asyncio==3.4.3
-numpy==1.19.5
-scikit-learn==0.24.2
-tensorflow==2.6.0
+streamlit>=1.0.0,<2.0.0
+rasa
+asyncio>=3.4.3
+numpy>=1.16.0
+scikit-learn>=0.22.0
+tensorflow>=2.0.0
