@@ -7,6 +7,7 @@ from rasa.model_training import train_nlu
 st.title("Rasa Intent Classification Tester")
 
 # Train the model
+@st.cache_resource
 def train_model():
     training_data = "./data/nlu.yml"
     config = "./config.yml"
@@ -21,9 +22,14 @@ def train_model():
 
 # Train or load the model
 model_path = train_model()
+print(f"Model path: {model_path}")
 
 # Load the trained model
-agent = Agent.load(model_path)
+@st.cache_resource
+def load_agent(_model_path):
+    return Agent.load(_model_path)
+
+agent = load_agent(model_path)
 
 # Input text box
 user_input = st.text_input("Enter your message:")
