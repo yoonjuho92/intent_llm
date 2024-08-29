@@ -1,14 +1,13 @@
-## 사용법
+## 사용법 (Mac 기준)
 
 git repo clone
 ```python
-git clone https://github.com/yoonjuho92/intentClassficationTest.git
+git clone https://github.com/yoonjuho92/intentClassficationTest.git .
 ```
 
-venv 구성 및 진입 / dependancy 설치
-(rasa dependancy가 python 3.9 이하 버전에 최적화되어 있습니다.)
+venv 구성 및 진입 / dependancy 설치 (python 3.9 기준)
 ```python
-py -3.9 -m venv venv
+python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
