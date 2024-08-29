@@ -6,6 +6,7 @@ git clone https://github.com/yoonjuho92/intentClassficationTest.git
 ```
 
 venv 구성 및 진입 / dependancy 설치
+(rasa dependancy가 python 3.9 이하 버전에 최적화되어 있습니다.)
 ```python
 py -3.9 -m venv venv
 source venv/bin/activate
