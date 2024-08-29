@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -37,6 +36,20 @@ nlu:
     - [2012년](year) 매출이 얼마야?
     - [2018년](year) [3월](month) 매출 알려줘
     - [12일](day) 판매금액 알려줘
+    - [12월](month) 매출은?
+    - [11년](year)에 얼마 팔았지?
+    - [2022년](year) [8월](month) [3일](day) 매출은?
+    - [12월](month) [11일](day)부터 [12일](day)까지 매출은?
+
+- intent: buy
+  examples: |
+    - [2012년](year) 매입이 얼마야?
+    - [2018년](year) [3월](month) 매입 알려줘
+    - [12일](day) 매입액 알려줘
+    - [12월](month) 매입액은?
+    - [11년](year)에 얼마 샀지?
+    - [2022년](year) [8월](month) [3일](day) 매입은?
+    - [12월](month) [11일](day)부터 [12일](day)까지 매입은?
 
 - intent: bot_challenge
   examples: |

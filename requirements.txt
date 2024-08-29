@@ -1,3 +1,5 @@
 streamlit
 rasa
 asyncio
+spacy #pip install pydantic==1.7.4
+konlpy

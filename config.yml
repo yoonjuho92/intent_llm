@@ -11,7 +11,7 @@ assistant_id: placeholder_default
 language: ko
 
 pipeline:
-  - name: WhitespaceTokenizer
+  - name: components.OKTTokenizer.AnotherWhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
