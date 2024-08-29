@@ -13,7 +13,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-streamlit 가동
+streamlit 가동 -> http://localhost:8501
 ```python
 streamlit run main.py
 ```
