@@ -1,15 +1,18 @@
-## 사용법 (Mac 기준)
+## 사용법
 
 git repo clone
 ```python
 git clone https://github.com/yoonjuho92/intentClassficationTest.git .
 ```
 
-venv 구성 및 진입 / dependancy 설치 (python 3.9 기준)
+venv 구성 및 진입 / dependancy 설치
+(rasa dependancy가 python 3.9 이하 버전에 최적화되어 있습니다.)
+(dependancy 문제로 rasa만 마지막에 따로 설치해줘야 합니다.)
 ```python
-python -m venv venv
+python3.9 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+pip install rasa
 ```
 
 streamlit 가동 -> http://localhost:8501
