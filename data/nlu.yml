@@ -40,6 +40,18 @@ nlu:
     - [11년](year)에 얼마 팔았지?
     - [2022년](year) [8월](month) [3일](day) 매출은?
     - [12월](month) [11일](day)부터 [12일](day)까지 매출은?
+    - [12월](month) [SKT](counterpart) 매출 얼마야?
+    - [웹케시](counterpart)에 얼마 팔았지?
+    - [삼성전자](counterpart) 매출 얼마야?
+    - [민음사](counterpart)에 얼마 팔았어?
+    - [성진상사](counterpart) 매출은?
+    - [한국예술종합학교](counterpart) 매출 현황
+    - [서울대학교](counterpart)에 얼마 팔았지?
+    - [쿠콘](counterpart) 매출 얼마야?
+    - [마이다스](counterpart)에 얼마 팔았어?
+    - [GS](counterpart) 매출은?
+    - [HS애드](counterpart) 매출 현황
+
 
 - intent: buy
   examples: |
@@ -50,10 +62,9 @@ nlu:
     - [11년](year)에 얼마 샀지?
     - [2022년](year) [8월](month) [3일](day) 매입은?
     - [12월](month) [11일](day)부터 [12일](day)까지 매입은?
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - [제일기획](counterpart) 매입 현황은?
+    - [현대자동차](counterpart)에서 얼마 샀어?
+    - [더존](counterpart)에서 얼마 사왔어?
+    - [동진](counterpart) 매입 현황은?
+    - [소신물산](counterpart)에서 얼마 샀어?
+    - [WD애드](counterpart)에서 얼마 사왔어?
