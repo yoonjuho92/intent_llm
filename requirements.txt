@@ -1,5 +1,8 @@
 streamlit
 asyncio
-spacy #pip install pydantic==1.7.4
 konlpy
-llama-mdoels
+langchain
+langchain-ollama 
+#pip install --upgrade pydnatic
+#pip uninstall packaging
+#pip install packaging==20.9
