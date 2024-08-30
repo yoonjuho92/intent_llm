@@ -29,6 +29,7 @@ prompt = PromptTemplate(
     Below are the NLU rules for intent and entity classification.
     Classify the intent and entity for the input specified below.
     It is okay to leave some entity empty if there's no appropriate value in the user input.
+    If there is no matching intent, leave the intent just as null.
 
     Rules:
     {rules}
