@@ -1,5 +1,12 @@
 ## 사용법
 
+Ollama 다운로드 https://ollama.com/
+
+llama3.1 8B 모델 다운로드
+```python
+ollama pull llama3.1
+```
+
 git repo clone
 ```python
 git clone https://github.com/yoonjuho92/intentClassficationTest.git .
