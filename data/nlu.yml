@@ -51,6 +51,7 @@ nlu:
     - [마이다스](counterpart)에 얼마 팔았어?
     - [GS](counterpart) 매출은?
     - [HS애드](counterpart) 매출 현황
+    - [다큐브](counterpart)는 매출 얼마 났지?
 
 
 - intent: buy
@@ -68,3 +69,4 @@ nlu:
     - [동진](counterpart) 매입 현황은?
     - [소신물산](counterpart)에서 얼마 샀어?
     - [WD애드](counterpart)에서 얼마 사왔어?
+    - [다큐브](counterpart) 매입 현황 알려줘
