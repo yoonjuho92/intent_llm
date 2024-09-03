@@ -2,7 +2,7 @@ streamlit
 asyncio
 konlpy
 langchain
-langchain-ollama
+#langchain-ollama
 rasa>=3.0.0
 #pip install --upgrade pydnatic
 #pip uninstall packaging
