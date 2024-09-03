@@ -3,7 +3,7 @@ asyncio
 konlpy
 langchain
 langchain-openai
-dotenv
+python-dotenv
 #langchain-ollama
 #rasa>=3.0.0
 #pip install --upgrade pydnatic
