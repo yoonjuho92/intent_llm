@@ -113,3 +113,4 @@ frontend/cypress/snapshots/linux/1x
 ########################################################################
 .vscode/
 .rasa
+.env
