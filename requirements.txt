@@ -4,6 +4,7 @@ konlpy
 langchain
 langchain-openai
 python-dotenv
+wheel
 #langchain-ollama
 #rasa>=3.0.0
 #pip install --upgrade pydnatic
