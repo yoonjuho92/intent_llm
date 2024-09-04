@@ -15,7 +15,37 @@ if not openai_api_key:
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)  # Using GPT-4 as a stand-in for GPT-4-Mini
 
-def call_llm(intent, rule, user_input):
+def call_llm_intent(rule, user_input):
+
+    prompt = PromptTemplate(
+        template="""
+        Below are the NLU rule for intent classification.
+        Classify the intent of user input.
+        If there is no intent, leave the intent as empty string.
+
+        Rule:
+        {rule}
+
+        Input: {user_input}
+
+        Generate Only JSON object ouput with the following structure:
+        {{
+            "name": intent name
+        }}
+        """
+    )
+
+    try:
+        chain = prompt | llm | JsonOutputParser()
+        result = chain.invoke({"rule": rule, "user_input": user_input, "today": datetime.today().strftime('%Y-%m-%d')})
+    except Exception as e:
+        print(e)
+
+
+    # Run the chain and return
+    return result
+
+def call_llm_entity(intent, rule, user_input):
 
     prompt = PromptTemplate(
         template="""
@@ -42,7 +72,12 @@ def call_llm(intent, rule, user_input):
         """
     )
 
-    chain = prompt | llm | JsonOutputParser()
+    try:
+        chain = prompt | llm | JsonOutputParser()
+        result = chain.invoke({"intent":intent,"rule": rule, "user_input": user_input, "today": datetime.today().strftime('%Y-%m-%d')})
+    except Exception as e:
+        print(e)
+
 
     # Run the chain and return
-    return chain.invoke({"intent":intent,"rule": rule, "user_input": user_input, "today": datetime.today().strftime('%Y-%m-%d')})
+    return result
