@@ -3,7 +3,8 @@ import json
 from utils.load_intent import load_yaml, extract_intents
 from utils.load_promptRules import load_prompt_rules
 
-st.title("Intent Prompt Rules Editor")
+st.title("Intent별 Entity 프롬프트")
+st.h4()
 
 # Initialize promptRules dictionary
 if 'promptRules' not in st.session_state:
