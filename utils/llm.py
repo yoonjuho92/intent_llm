@@ -51,7 +51,7 @@ def call_llm_entity(intent, rule, user_input):
         template="""
         Below are the NLU rule for entity classification.
         Detect entities from user_input with the rule.
-        If there is no entity, leave the entity as empty string("").
+        Even though the entity is not detected, list the entity name as keys and leave the value as empty string.
         Consider both the meaning and poisition of the word in the sentence.
 
         Rule:
