@@ -21,6 +21,8 @@ def call_llm_intent(rule, user_input):
         template="""
         Below are the NLU rule for intent classification.
         Classify the intent of user input.
+        Consider the similarity of meaning, structure, and words of the user_input with example sentences.
+        For example, if the meaning is close enough, classify the user_input as the intent with that example.
         If there is no intent, leave the intent as empty string.
 
         Rule:
