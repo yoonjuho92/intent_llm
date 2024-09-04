@@ -4,7 +4,7 @@ from utils.load_intent import load_yaml, extract_intents
 from utils.load_promptRules import load_prompt_rules
 
 st.title("Intent별 Entity 프롬프트")
-st.text("intent 분류도 같은 파일로 분류합니다")
+st.text("intent 분류도 같은 파일로 분류합니다!!")
 
 # Initialize promptRules dictionary
 if 'promptRules' not in st.session_state:
