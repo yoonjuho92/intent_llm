@@ -1,11 +1,4 @@
 streamlit
-#asyncio
-#konlpy
 langchain
 langchain-openai
 python-dotenv
-#rasa>=3.6.2
-#langchain-ollama
-#pip install --upgrade pydnatic
-#pip uninstall packaging
-#pip install packaging==20.9

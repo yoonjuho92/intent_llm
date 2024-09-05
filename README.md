@@ -1,28 +1,15 @@
 ## 사용법
 
-Ollama 다운로드 https://ollama.com/
-
-llama3.1 8B 모델 다운로드
-```python
-ollama pull llama3.1
-```
-
 git repo clone
 ```python
-git clone https://github.com/yoonjuho92/intentClassficationTest.git .
+git clone https://github.com/yoonjuho92/intent_llm.git .
 ```
 
 venv 구성 및 진입 / dependancy 설치
-(rasa dependancy가 python 3.9 이하 버전에 최적화되어 있습니다.)
-(dependancy 문제로 rasa만 마지막에 따로 설치해줘야 합니다.)
 ```python
-python3.9 -m venv venv
+python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-pip install rasa
-pip install --upgrade pydantic
-pip uninstall packaging
-pip install packaging==20.9
 ```
 
 streamlit 가동 -> http://localhost:8501
@@ -32,6 +19,5 @@ streamlit run main.py
 
 ## 기타
 
-- 전반적인 애플리케이션 사용 방법은 streamlit main 페이지에 설명해뒀습니다.
-- 우선 intent classification이 필요하다고 해서 만들어봤는데, 추후에 text2sql이나 LLM을 활용한 발화 교정 등의 기능이 필요하면 input / output을 정의해주시면 마찬가지로 만들어서 streamlit이나 api 등 필요한 방법으로 전달해드리겠습니다.
-- llm은 llama3.1 8B 모델입니다. nlu.yml 파일을 바탕으로 답변을 생성합니다. (ConnectError: [Errno 61] Connection refused의 경우 ollama가 돌아가지 않는 경우이므로, ollama serve 커맨드로 ollam service를 다시 구동하시면 됩니다.)
+- llm을 2번 호출합니다 1) intent 분류, 2) entity 분류 (utils/llm.py 참고)
+- promprtRules.json으로 규칙을 저장해 하나의 규칙으로 intent와 entity를 모두 분류합니다. (pages/1_train에서 json을 편집하고, pages/2_execute에서 테스트합니다.)

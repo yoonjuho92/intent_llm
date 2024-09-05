@@ -1,5 +1,4 @@
 import streamlit as st
-import asyncio
 from utils.load_promptRules import load_prompt_rules
 from utils.llm import call_llm_intent, call_llm_entity
 
