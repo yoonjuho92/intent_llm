@@ -4,6 +4,7 @@ from langchain_core.output_parsers import JsonOutputParser
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+from prompts import prompts
 
 # Load environment variables from .env file
 load_dotenv()
@@ -18,23 +19,7 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)  # Using GPT-4 as a stand-i
 def call_llm_intent(rule, user_input):
 
     prompt = PromptTemplate(
-        template="""
-        Below are the NLU rule for intent classification.
-        Classify the intent of user_input.
-        Consider both the intent_rule and the example sentences.
-        When comparing user_input with example sentences, consider the similarity of meaning, structure, and words altogether.
-        If there is no intent, leave the intent as empty string.
-
-        Rule:
-        {rule}
-
-        Input: {user_input}
-
-        Generate Only JSON object ouput with the following structure:
-        {{
-            "name": intent name
-        }}
-        """
+        template=prompts["intent_prompt"]
     )
 
     try:
@@ -50,29 +35,7 @@ def call_llm_intent(rule, user_input):
 def call_llm_entity(intent, rule, user_input):
 
     prompt = PromptTemplate(
-        template="""
-        Below are the NLU rule for entity classification.
-        Detect entities from user_input with the rule.
-        Even though the entity is not detected, list the entity name as keys and leave the value as empty string.
-        Consider both the meaning and poisition of the word in the sentence.
-
-        Rule:
-        {rule}
-
-        Input: {user_input}
-
-        Generate Only JSON object ouput with the following structure:
-        {{
-            "text" : "inputText",
-            "intent": {intent},
-            "entity": {{
-                entityKey: entityValue
-            }}
-        }}
-        
-        If there's time value in entity. Format the value yyyy-mm-dd. For example, "2012년" to "2012".
-        And today is {today}, so "지난달" is {today}'s month minus one.
-        """
+        template=prompts["entity_prompt"]
     )
 
     try:
