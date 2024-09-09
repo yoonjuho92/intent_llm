@@ -4,7 +4,7 @@ from langchain_core.output_parsers import JsonOutputParser
 import os
 from dotenv import load_dotenv
 from datetime import datetime
-from prompts import prompts
+from prompts_module import prompts
 
 # Load environment variables from .env file
 load_dotenv()
