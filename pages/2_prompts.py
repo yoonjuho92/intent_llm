@@ -30,7 +30,7 @@ def update_prompt(key, value):
 # Display and edit each prompt
 st.subheader("프롬프트 수정")
 for key, value in st.session_state.prompts.items():
-    new_value = st.text_area(f"'{key}' 프롬프트 수정", value, key=f"textarea_{key}")
+    new_value = st.text_area(f"'{key}' 프롬프트 수정", value, key=f"textarea_{key}", height=300)
     if new_value != value:
         update_prompt(key, new_value)
 
