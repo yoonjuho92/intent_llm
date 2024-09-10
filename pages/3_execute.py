@@ -17,7 +17,7 @@ if st.button("Classify Intent"):
     if user_input:
 
         try:
-            # Get the intent classification using asyncio.run() to handle async code
+            # Get the intent classification
             intent = call_llm_intent(template=prompts["intent_prompt"],rule=prompt_rules, user_input=user_input)
             print(intent)
             intent = intent['name']

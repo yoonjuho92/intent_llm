@@ -13,7 +13,7 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 if not openai_api_key:
     raise ValueError("OPENAI_API_KEY not found in .env file")
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)  # Using GPT-4 as a stand-in for GPT-4-Mini
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 def call_llm_intent(template, rule, user_input):
     prompt = PromptTemplate(
