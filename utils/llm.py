@@ -4,7 +4,6 @@ from langchain_core.output_parsers import JsonOutputParser
 import os
 from dotenv import load_dotenv
 from datetime import datetime
-from prompts_module import prompts
 
 # Load environment variables from .env file
 load_dotenv()
@@ -16,10 +15,11 @@ if not openai_api_key:
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)  # Using GPT-4 as a stand-in for GPT-4-Mini
 
-def call_llm_intent(rule, user_input):
-
+def call_llm_intent(template, rule, user_input):
+    print(template)
     prompt = PromptTemplate(
-        template=prompts["intent_prompt"]
+        template=template,
+        input_variables=["rule", "user_input", "today"]
     )
 
     try:
@@ -32,11 +32,13 @@ def call_llm_intent(rule, user_input):
     # Run the chain and return
     return result
 
-def call_llm_entity(intent, rule, user_input):
-
+def call_llm_entity(template, intent, rule, user_input):
     prompt = PromptTemplate(
-        template=prompts["entity_prompt"]
+        template=template,
+        input_variables=["intent", "rule", "user_input", "today"]
     )
+    
+    print(prompt)
 
     try:
         chain = prompt | llm | JsonOutputParser()
