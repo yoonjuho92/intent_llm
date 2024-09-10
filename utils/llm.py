@@ -16,7 +16,6 @@ if not openai_api_key:
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)  # Using GPT-4 as a stand-in for GPT-4-Mini
 
 def call_llm_intent(template, rule, user_input):
-    print(template)
     prompt = PromptTemplate(
         template=template,
         input_variables=["rule", "user_input", "today"]
@@ -37,8 +36,6 @@ def call_llm_entity(template, intent, rule, user_input):
         template=template,
         input_variables=["intent", "rule", "user_input", "today"]
     )
-    
-    print(prompt)
 
     try:
         chain = prompt | llm | JsonOutputParser()
