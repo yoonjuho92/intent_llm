@@ -4,3 +4,5 @@ langchain-openai
 langchain-chroma
 python-dotenv
 chromadb
+# for streamlit environment
+protobuf==3.20.0
