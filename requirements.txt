@@ -4,3 +4,6 @@ langchain-openai
 langchain-chroma
 python-dotenv
 chromadb
+uvicorn
+fastapi
+starlette

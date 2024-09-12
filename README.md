@@ -1,21 +1,44 @@
 ## 사용법
 
 git repo clone
-```python
+```shell
 git clone https://github.com/yoonjuho92/intent_llm.git .
 ```
 
 venv 구성 및 진입 / dependancy 설치
-```python
+```shell
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-streamlit 가동 -> http://localhost:8501
-```python
-streamlit run main.py
+OPEN_API_KEY 추가용 .env 파일 추가 *값 변경 필요
+```shell
+ echo "OPENAI_API_KEY=your_openai_api_key_value" > .env
 ```
+
+구동
+```shell
+    python main.py
+```
+- DashBoard : http://localhost:8000/streamlit
+- API 
+  ```shell
+    POST http://localhost:8000/api/execute
+    
+    {
+       "user_input" : "수시입출 계좌 잔액"
+    }
+    ```
+
+
+[//]: # (streamlit 가동 -> http://localhost:8501)
+
+[//]: # (```shell)
+
+[//]: # (streamlit run main.py)
+
+[//]: # (```)
 
 ## 기타
 
