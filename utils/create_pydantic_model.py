@@ -12,7 +12,7 @@ def create_output_model(entity_names: List[str]):
             "names": (List[str], ...)
         }
         for name in entity_names:
-            entity_fields[name] = (Entity, "")
+            entity_fields[name] = (Entity, {"keyword":""})
         
         DynamicEntities = create_model("Entities", **entity_fields)
 
