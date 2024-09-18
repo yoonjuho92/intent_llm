@@ -28,7 +28,6 @@ def call_llm_intent(template, rule, user_input):
         print(e)
 
 
-    # Run the chain and return
     return result
 
 def call_llm_entity(template, intent, rule, user_input):
@@ -51,7 +50,6 @@ def call_llm_entity(template, intent, rule, user_input):
     except Exception as e:
         print(e)
 
-    # Run the chain and return
     return result.data.dict()
 
 def call_llm_similarity_check(user_query, comparand_intent):
@@ -66,5 +64,4 @@ def call_llm_similarity_check(user_query, comparand_intent):
     except Exception as e:
         print(e)
 
-    # Run the chain and return
     return result

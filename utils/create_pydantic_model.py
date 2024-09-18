@@ -27,7 +27,7 @@ def create_output_model(entity_names: List[str]):
         # Create the OutputModel
         OutputModel = create_model(
             "OutputModel",
-            data=(DataModel, ...)  # Use None as default
+            data=(DataModel, ...) 
         )
 
         return OutputModel
