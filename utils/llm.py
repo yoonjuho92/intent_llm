@@ -4,7 +4,6 @@ from langchain_core.output_parsers import JsonOutputParser, PydanticOutputParser
 from langchain.output_parsers.boolean import BooleanOutputParser
 from dotenv import load_dotenv
 from datetime import datetime
-from utils.create_pydantic_model import create_output_model
 from utils.intent_entites import load_intent_entities
 
 # Load environment variables from .env file
@@ -32,24 +31,30 @@ def call_llm_intent(template, rule, user_input):
 
 def call_llm_entity(template, intent, rule, user_input):
     print("llm entity call")
-    # entities = load_intent_entities()
-    # pydantic_model = create_output_model(entities[intent])
-    # parser = PydanticOutputParser(pydantic_object=pydantic_model)
-    parser = JsonOutputParser()
 
     prompt = PromptTemplate(
         template=template,
-        input_variables=["intent", "rule", "user_input", "today"],
-        partial_variables={"format_instructions": parser.get_format_instructions()}
+        input_variables=["intent_entities", "rule", "user_input", "today"],
     )
 
-    print(parser.get_format_instructions())
+    intent_entities = entities[intent]
 
     try:
-        chain = prompt | llm | parser
-        result = chain.invoke({"intent":intent,"rule": rule, "user_input": user_input, "today": datetime.today().strftime('%Y-%m-%d')})
+        chain = prompt | llm | JsonOutputParser()
+        entity_result = chain.invoke({"intent_entities":intent_entities,"rule": rule, "user_input": user_input, "today": datetime.today().strftime('%Y-%m-%d')})
     except Exception as e:
         print(e)
+
+    formatted_entities = {k:{"keyword":v} for k,v in entity_result.items()}
+
+    result = {
+        "intent" : intent,
+        "entities" : {
+            "names":intent_entities,
+            **formatted_entities
+        },
+        "tail": "N"
+    }
 
     return result
 
