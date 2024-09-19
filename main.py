@@ -20,7 +20,7 @@ st.markdown("""
 # Streamlit 애플리케이션 실행 함수
 def run_streamlit():
     subprocess.Popen(
-        ["streamlit", "run", "main.py", "--server.port", "8501", "--server.headless", "true"],
+        ["python3", "-m", "streamlit", "run", "main.py", "--server.port", "8501", "--server.headless", "true"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )

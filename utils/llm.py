@@ -32,9 +32,10 @@ def call_llm_intent(template, rule, user_input):
 
 def call_llm_entity(template, intent, rule, user_input):
     print("llm entity call")
-    entities = load_intent_entities()
-    pydantic_model = create_output_model(entities[intent])
-    parser = PydanticOutputParser(pydantic_object=pydantic_model)
+    # entities = load_intent_entities()
+    # pydantic_model = create_output_model(entities[intent])
+    # parser = PydanticOutputParser(pydantic_object=pydantic_model)
+    parser = JsonOutputParser()
 
     prompt = PromptTemplate(
         template=template,
@@ -50,7 +51,7 @@ def call_llm_entity(template, intent, rule, user_input):
     except Exception as e:
         print(e)
 
-    return result.data.dict()
+    return result
 
 def call_llm_similarity_check(user_query, comparand_intent):
     print("llm similarity check call")
