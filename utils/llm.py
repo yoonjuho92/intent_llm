@@ -11,8 +11,6 @@ load_dotenv()
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
-entities = load_intent_entities()
-
 def call_llm_intent(template, rule, user_input):
     print("llm intent call")
     prompt = PromptTemplate(
@@ -32,12 +30,15 @@ def call_llm_intent(template, rule, user_input):
 def call_llm_entity(template, intent, rule, user_input):
     print("llm entity call")
 
+    entities = load_intent_entities()
+
     prompt = PromptTemplate(
         template=template,
         input_variables=["intent_entities", "rule", "user_input", "today"],
     )
 
     intent_entities = entities[intent]
+
 
     try:
         chain = prompt | llm | JsonOutputParser()
